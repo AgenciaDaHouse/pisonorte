@@ -1,0 +1,7 @@
+{
+  "APP_NAME" : "Pisonorte",
+  "APP_PORT" : 4000,
+
+  "SRC_PATH"  : "./src",
+  "DIST_PATH" : "./public"
+}

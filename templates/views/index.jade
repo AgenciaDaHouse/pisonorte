@@ -1,0 +1,23 @@
+//- template
+extends ../layouts/default
+
+//- dependencies
+include ../../src/components/about/about
+include ../../src/components/banner/banner
+include ../../src/components/contact/contact
+include ../../src/components/main-footer/main-footer
+include ../../src/components/main-header/main-header
+include ../../src/components/products/products
+include ../../src/components/showcase/showcase
+include ../../src/components/supliers/supliers
+
+//- markup
+block content
+  +main-header
+  +banner
+  +about
+  +products
+  +showcase
+  +supliers
+  +contact
+  +footer
