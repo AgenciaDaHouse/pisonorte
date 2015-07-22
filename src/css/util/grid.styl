@@ -1,0 +1,39 @@
+.u-grid
+  $gutter = 1rem
+
+  display flex
+  flex-wrap wrap
+  margin-top -($gutter / 2)
+
+  +breakpoint(sm)
+    margin -($gutter) 0 0 -($gutter)
+
+  > .u-grid__cell
+    flex 0 0 100%
+    padding-top ($gutter / 2)
+
+    +breakpoint(sm)
+      flex 1
+      padding $gutter 0 0 $gutter
+
+    &.is-dummy
+      flex none
+
+  &.not-responsive
+    margin-left -($gutter)
+
+    > .u-grid__cell
+      flex 1
+      padding-left $gutter
+
+      &.is-dummy
+        flex none
+
+  &.no-gutter
+    margin 0
+
+    > .u-grid__cell
+      padding 0
+
+  &.is-centered
+    align-items center

@@ -1,0 +1,19 @@
+.c-main-nav
+  text-align center
+
+  &__item
+    display inline-block
+
+    &:before
+      content: '|'
+      padding 0 0.5rem
+
+    &:first-child:before
+      display none
+
+  &__link
+    font-size 1.05rem
+    text-transform uppercase
+
+    &.is-active
+      font-weight 700

@@ -10,7 +10,7 @@ var env = require('gulp-env')
  * env tasks
  */
 gulp.task('env:dev', function () {
-  env({ vars: { NODE_ENV: 'development' }})
+  env({ vars: { NODE_ENV: 'production' }})
 })
 
 gulp.task('env:build', function () {

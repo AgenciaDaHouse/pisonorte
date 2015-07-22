@@ -21,8 +21,10 @@ html
       script(src='//oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js')
     //-[endif]
 
+    +google-fonts('PT+Sans:400,700,400italic,700italic')
     +css('base')
     +js('//maps.googleapis.com/maps/api/js?v=3.exp!')
 
   body
-    block content
+    .main-wrapper
+      block content
