@@ -26,7 +26,9 @@ keystone.init({
   'session': true,
   'auth': true,
   'user model': 'User',
-  'cookie secret': 'mfT!Q*|V]9]RXB<Ty}h]{<7B@5{]t0>$l`1w$HG2]K{B|sAS(86[ug8bb%5:kGEJ'
+  'cookie secret': 'mfT!Q*|V]9]RXB<Ty}h]{<7B@5{]t0>$l`1w$HG2]K{B|sAS(86[ug8bb%5:kGEJ',
+
+  'mongo': process.env.MONGOLAB_URI || 'mongodb://localhost/pisonorte'
 })
 
 // Models
