@@ -14,6 +14,7 @@
     "gulp-changed": "^1.2.1",
     "gulp-combine-mq": "^0.4.0",
     "gulp-env": "^0.2.0",
+    "gulp-eslint": "^0.15.0",
     "gulp-flatten": "^0.1.0",
     "gulp-live-server": "0.0.23",
     "gulp-livereload": "^3.8.0",
@@ -22,14 +23,11 @@
     "gulp-postcss": "^5.1.10",
     "gulp-rename": "^1.2.2",
     "gulp-stylus": "^2.0.5",
+    "gulp-watch": "^0.6.5",
     "keystone": "^0.3.11",
     "run-sequence": "^1.1.2",
     "underscore": "^1.8.0",
     "vinyl-source-stream": "^1.1.0"
-  },
-  "devDependencies": {
-    "gulp-eslint": "^0.15.0",
-    "gulp-watch": "^0.6.5"
   },
   "engines": {
     "node": ">=0.10.22",
