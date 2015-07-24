@@ -29,7 +29,9 @@ html
       block content
 
     if ENV !== 'production'
-      script(src='//localhost:35728/livereload.js')
+      script(src='//localhost:35729/livereload.js')
 
+    +js('//ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery')
     +js('//cdnjs.cloudflare.com/ajax/libs/prefixfree/1.0.7/prefixfree.min.js!')
     +js('vendor/conic-gradient.ns')
+    +js('app/main')

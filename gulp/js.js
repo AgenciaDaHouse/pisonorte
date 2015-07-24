@@ -27,7 +27,7 @@ gulp.task('eslint', function () {
  * browserify task
  */
 gulp.task('browserify', function () {
-  return glob('./src/js/*.js', function (err, files) {
+  return glob('./src/js/app/*.js', function (err, files) {
     if (err) {
       throw new Error(err)
     }
@@ -48,7 +48,7 @@ gulp.task('browserify', function () {
 
         .pipe(source(entry))
         .pipe(flatten())
-        .pipe(gulp.dest('./public/js'))
+        .pipe(gulp.dest('./public/js/app'))
       })
 
     return es.merge.apply(null, tasks)
