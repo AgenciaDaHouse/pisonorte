@@ -22,5 +22,18 @@ exports = module.exports = function(req, res) {
     { label: 'Orçamentos/Contato', url: '/#contato' }
   ]
 
+  view.on('init', function (next) {
+    var q = keystone
+      .list('Products')
+      .model
+      .find()
+      .sort('sortOrder')
+
+    q.exec(function(err, results) {
+      locals.products = results
+      next(err)
+    })
+  })
+
   view.render('index')
 }

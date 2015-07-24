@@ -5,35 +5,25 @@
  */
 var gulp = require('gulp')
 var nodemon = require('gulp-nodemon')
-var browserSync = require('browser-sync')
-var config = require('../config')
+var livereload = require('gulp-livereload')
 
 /**
  * watch task
  */
 gulp.task('watch', function () {
+  livereload.listen({ port: 35728 })
   gulp.watch([ './src/**/*.styl' ], [ 'css' ])
   // gulp.watch([ './src/**/*.js' ], [ 'js' ])
-  gulp.watch('src/**/*.jade').on('change', browserSync.reload)
 })
 
 /**
  * server task
  */
-gulp.task('server', [ 'env:dev', 'watch', 'browserSync' ], function () {
+gulp.task('server', [ 'env:dev', 'build', 'watch' ], function () {
   nodemon({
+    verbose: true,
     script: 'index.js',
-    watch: [ './routes', './templates' ],
-    ext: 'js json jade'
+    watch: [ './routes' ],
+    ext: 'js json'
   })
-    .on('restart', function () {
-      setTimeout(function () { browserSync.reload({ stream: false }) }, 1000)
-    })
-})
-
-/**
- * browser sync task
- */
-gulp.task('browserSync', [ 'build' ], function() {
-  browserSync({ proxy: 'http://localhost:' + config.APP_PORT })
 })

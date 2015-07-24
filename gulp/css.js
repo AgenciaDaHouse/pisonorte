@@ -10,8 +10,8 @@ var changed = require('gulp-changed')
 var stylus = require('gulp-stylus')
 var postcss = require('gulp-postcss')
 var combineMq = require('gulp-combine-mq')
-var browserSync = require('browser-sync')
 var rename = require('gulp-rename')
+var livereload = require('gulp-livereload')
 
 /**
  * settings
@@ -29,11 +29,11 @@ gulp.task('css:build', function () {
     .pipe(postcss([ require('autoprefixer-core') ]))
     .pipe(combineMq())
     .pipe(gulp.dest(DIST))
-    .pipe(browserSync.reload({ stream: true }))
+    .pipe(livereload())
 })
 
 gulp.task('css:vendor', function () {
-  gulp.src('./bower_components/normalize.css/normalize.css')
+  return gulp.src('./bower_components/normalize.css/normalize.css')
     .pipe(rename({ extname: '.styl' }))
     .pipe(gulp.dest('./src/css/vendor'))
 })

@@ -75,7 +75,7 @@ keystone.set('email tests', require('./routes/emails'))
 
 // Admin nav config
 keystone.set('nav', {
-  'galleries': 'galleries',
+  'products': 'products',
   'enquiries': 'enquiries',
   'users': 'users'
 })

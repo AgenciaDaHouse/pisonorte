@@ -12,7 +12,6 @@ var notify = require('gulp-notify')
 var flatten = require('gulp-flatten')
 var eslint = require('gulp-eslint')
 var plumber = require('gulp-plumber')
-var browserSync = require('browser-sync')
 
 /**
  * eslint task
@@ -50,7 +49,6 @@ gulp.task('browserify', function () {
         .pipe(source(entry))
         .pipe(flatten())
         .pipe(gulp.dest('./public/js'))
-        .pipe(browserSync.reload({ stream: true }))
       })
 
     return es.merge.apply(null, tasks)
@@ -58,6 +56,14 @@ gulp.task('browserify', function () {
 })
 
 /**
+ * vendor
+ */
+gulp.task('js:vendor', function () {
+  return gulp.src('./src/js/vendor/*.js')
+    .pipe(gulp.dest('./public/js/vendor'))
+})
+
+/**
  * js task
  */
-gulp.task('js', [ 'browserify' ])
+gulp.task('js', [ 'browserify', 'js:vendor' ])
