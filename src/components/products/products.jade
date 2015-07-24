@@ -1,7 +1,13 @@
 //- dependencies
 include ./items
+include ../content-header/content-header
 
 mixin products
   section.c-products
     .h-limiter
-      +products-items
+      +content-header('Produtos', 'Lorem ipsum dolor sit amet, consectetur adipisicing elit')
+
+    .c-products__wrapper
+      .h-limiter
+        +content-header('Pisos', '', 'sub')
+        +products-items

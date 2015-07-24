@@ -1,0 +1,6 @@
+mixin content-header(name, description, type)
+  - isSub = type === 'sub'
+  .c-content-header(class=type ? 'c-content-header--' + type : '')
+    #{isSub ? 'h3' : 'h2'}.c-content-header__heading.h-im #{name}
+    if description
+      p.c-content-header__description.h-im #{description}
