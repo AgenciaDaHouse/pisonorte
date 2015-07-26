@@ -1,0 +1,33 @@
+mixin contact-form
+  form.c-contact__form
+    legend.c-contact__legend Dúvidas ou sugsetões entre em contato, teremos o prazer em atendê-lo.
+    
+    .c-contact__row
+      label.c-contact__label(for='name') Nome:
+      input.c-contact__field#name(name='name', type='text', required)
+
+    .c-contact__row
+      label.c-contact__label(for='email') E-mail:
+      input.c-contact__field#email(name='email', type='email', required)
+
+    .c-contact__row
+      label.c-contact__label(for='city') Cidade:
+      input.c-contact__field#city(name='city', type='text')
+
+    .c-contact__row
+      label.c-contact__label(for='phone') Telefone:
+      input.c-contact__field#phone(name='phone', type='text')
+
+    .c-contact__row
+      label.c-contact__label(for='address') Endereço:
+      input.c-contact__field#address(name='address', type='text')
+
+    .c-contact__row
+      label.c-contact__label(for='message') Mensagem:
+      textarea.c-contact__field.c-contact__field--textarea#message(name='message')
+
+    .c-contact__row
+      .c-contact__label
+      .c-contact__controls
+        button.c-contact__button(type='submit') Enviar
+        button.c-contact__button(type='reset') Cancelar
