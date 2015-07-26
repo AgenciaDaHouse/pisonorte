@@ -1,4 +1,5 @@
 /*eslint camelcase: [2, {properties: "never"}]*/
+'use strict'
 
 /**
  * dependencies
@@ -39,7 +40,10 @@ keystone.set('locals', {
   _: require('underscore'),
   env: keystone.get('env'),
   utils: keystone.utils,
-  editable: keystone.content.editable
+  editable: keystone.content.editable,
+  toPrice: function (value) {
+    return value.toFixed(2).replace('.', ',')
+  }
 })
 
 // Routes
@@ -76,6 +80,7 @@ keystone.set('email tests', require('./routes/emails'))
 // Admin nav config
 keystone.set('nav', {
   'products': 'products',
+  'showcase': 'offers',
   'enquiries': 'enquiries',
   'users': 'users'
 })

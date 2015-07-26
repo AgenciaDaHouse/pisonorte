@@ -35,5 +35,19 @@ exports = module.exports = function(req, res) {
     })
   })
 
+  view.on('init', function (next) {
+    var q = keystone
+      .list('Offer')
+      .model
+      .find()
+      .sort('sortOrder')
+
+    q.exec(function(err, results) {
+      console.log(results);
+      locals.offers = results
+      next(err)
+    })
+  })
+
   view.render('index')
 }

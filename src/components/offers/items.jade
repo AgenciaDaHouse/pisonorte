@@ -1,0 +1,23 @@
+mixin offers-items
+  ul.c-offers__items.u-grid
+    each item in offers
+      li.c-offers__item.u-grid__cell.u-grid__cell--1-3
+        .c-offers__item-wrapper
+          figure.c-offers__figure
+            img.c-offers__image(src=item.image.url, alt=item.name)
+
+          h3.c-offers__name #{item.name}
+          if item.listPrice
+            p.c-offers__price.c-offers__price--list De: R$ #{toPrice(item.listPrice)}
+
+          p.c-offers__price.c-offers__price--main
+            if item.listPrice
+              | Por: 
+            else
+              | A partir de: 
+            em R$ #{toPrice(item.price)}
+            if item.obs
+              | *
+
+          if item.obs
+            p.c-offers__obs *#{item.obs}

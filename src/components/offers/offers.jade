@@ -1,11 +1,12 @@
 //- dependencies
-//- include ./items
+include ./items
 include ../content-header/content-header
 
-mixin showcase
-  section.showcase
+mixin offers
+  section.c-offers
     .h-limiter
       +content-header('Promoções', 'Lorem ipsum dolor sit amet, consectetur adipisicing elit')
 
-    .c-showcase__wrapper
+    .c-offers__wrapper
       .h-limiter
+        +offers-items
