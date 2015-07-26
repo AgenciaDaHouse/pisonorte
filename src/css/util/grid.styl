@@ -12,12 +12,15 @@
     flex 0 0 100%
     padding-top ($gutter / 2)
 
-    &.is-1-5
-      flex 0 0 20%
-
     +breakpoint(sm)
       flex 1
       padding $gutter 0 0 $gutter
+
+      &--1-2
+        flex 0 0 50%
+
+      &--1-5
+        flex 0 0 20%
 
     &.is-dummy
       flex none

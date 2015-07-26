@@ -1,2 +1,12 @@
+//- dependencies
+include ./items
+include ../content-header/content-header
+
 mixin about
-  section.about about
+  section.c-about
+    .h-limiter
+      +content-header('A Empresa', 'Lorem ipsum dolor sit amet, consectetur adipisicing elit')
+
+    .c-about__wrapper
+      .h-limiter
+        +about-items

@@ -1,2 +1,11 @@
+//- dependencies
+//- include ./items
+include ../content-header/content-header
+
 mixin contact
-  section.contact contact
+  section.contact
+    .h-limiter
+      +content-header('Orçamentos/Contato', 'Lorem ipsum dolor sit amet, consectetur adipisicing elit')
+
+    .c-contact__wrapper
+      .h-limiter

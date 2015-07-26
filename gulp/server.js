@@ -11,7 +11,7 @@ var gls = require('gulp-live-server')
  * watch task
  */
 gulp.task('watch', function () {
-  livereload.listen({ port: 35729 })
+  livereload.listen({ port: 4100 })
   gulp.watch([ './src/**/*.styl' ], [ 'css' ])
   gulp.watch([ './src/**/*.js' ], [ 'js' ])
 })
