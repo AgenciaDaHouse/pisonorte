@@ -1,11 +1,12 @@
 //- dependencies
-//- include ./items
+include ./items
 include ../content-header/content-header
 
 mixin suppliers
-  section.suppliers
+  section.c-suppliers
     .h-limiter
       +content-header('Fornecedores', 'As melhores marcas e os melhores produtos você encontra aqui na Pisonorte.')
 
     .c-suppliers__wrapper
       .h-limiter
+        +supplier-items

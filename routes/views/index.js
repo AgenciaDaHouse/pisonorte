@@ -23,27 +23,40 @@ exports = module.exports = function(req, res) {
   ]
 
   view.on('init', function (next) {
-    var q = keystone
+    var products = keystone
       .list('Products')
       .model
       .find()
       .sort('sortOrder')
 
-    q.exec(function(err, results) {
+    products.exec(function(err, results) {
       locals.products = results
       next(err)
     })
   })
 
   view.on('init', function (next) {
-    var q = keystone
+    var offers = keystone
       .list('Offer')
       .model
       .find()
       .sort('sortOrder')
 
-    q.exec(function(err, results) {
+    offers.exec(function(err, results) {
       locals.offers = results
+      next(err)
+    })
+  })
+
+  view.on('init', function (next) {
+    var suppliers = keystone
+      .list('Supplier')
+      .model
+      .find()
+      .sort('sortOrder')
+
+    suppliers.exec(function(err, results) {
+      locals.suppliers = results
       next(err)
     })
   })

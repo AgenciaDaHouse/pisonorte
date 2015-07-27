@@ -1,0 +1,7 @@
+mixin supplier-items
+  ul.c-suppliers__items.u-grid
+    each item in suppliers
+      li.u-grid__cell.c-suppliers__item
+        .c-suppliers__item-wrapper.is-centered
+          figure.c-suppliers__figure
+            img.c-suppliers__image(src=item.image.url, alt=item.name, title=item.name)
