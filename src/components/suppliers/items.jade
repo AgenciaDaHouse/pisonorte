@@ -2,6 +2,6 @@ mixin supplier-items
   ul.c-suppliers__items.u-grid
     each item in suppliers
       li.c-suppliers__item.u-grid__cell.u-grid__cell--1-3
-        .c-suppliers__item-wrapper.is-centered
+        .c-suppliers__item-wrapper
           figure.c-suppliers__figure
             img.c-suppliers__image(src=item.image.url, alt=item.name, title=item.name)
