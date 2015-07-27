@@ -14,7 +14,7 @@ exports = module.exports = function(req, res) {
 
   locals.section = 'home'
   locals.mainNav = [
-    { label: 'Home', url: '/' },
+    { label: 'Home', url: '/#intro' },
     { label: 'Empresa', url: '/#empresa' },
     { label: 'Produtos', url: '/#produtos' },
     { label: 'Promoções', url: '/#promocoes' },
