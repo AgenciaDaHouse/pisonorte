@@ -43,7 +43,6 @@ exports = module.exports = function(req, res) {
       .sort('sortOrder')
 
     q.exec(function(err, results) {
-      console.log(results);
       locals.offers = results
       next(err)
     })
