@@ -1,5 +1,5 @@
 mixin main-nav(baseClass)
-  nav.c-main-nav(class=baseClass)
+  nav.c-main-nav#main-nav(class=baseClass)
     each item in mainNav
       li.c-main-nav__item
         a.c-main-nav__link(href=item.url) #{item.label}

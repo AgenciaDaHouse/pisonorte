@@ -5,6 +5,7 @@
  */
 var $window = $(window)
 var $header = $('#main-header')
+var $nav = $('#main-nav')
 var headerClass = 'c-main-header--small'
 var limit = 20
 
@@ -17,4 +18,12 @@ $window.on('scroll', function () {
   } else {
     $header.removeClass(headerClass)
   }
+})
+
+/**
+ * scroll nav
+ */
+$nav.onePageNav({
+  changeHash: true,
+  currentClass: 'is-active'
 })

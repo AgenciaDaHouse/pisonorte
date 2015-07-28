@@ -3,7 +3,8 @@ include ./items
 include ../content-header/content-header
 
 mixin products
-  section.c-products#produtos
+  section.c-products
+    #produtos.h-anchor
     .h-limiter
       +content-header('Produtos', 'Uma grande variedade de produtos atuais, inovadores e de qualidade assegurada.')
 
