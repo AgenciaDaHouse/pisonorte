@@ -1,3 +1,7 @@
+//- dependencies
+include ./items
+
 mixin banners
   ul.c-banners#intro
-    li.c-banners__item(style='background-image:url(http://lorempixel.com/1500/750/city/)')
+    - banners = [{ image: '/img/banner-01.jpg', textTop: 'As melhores', textBottom: 'condições!' }]
+    +banners-items

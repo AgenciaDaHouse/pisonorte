@@ -1,0 +1,6 @@
+mixin banners-items
+  each item in banners
+    li.c-banners__item(style='background-image:url(#{item.image})')
+      .c-banners__text
+        p.c-banners__text-top #{item.textTop}
+        p.c-banners__text-bottom #{item.textBottom}
