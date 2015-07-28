@@ -9,7 +9,7 @@ var runSequence = require('run-sequence')
 /**
  * settings
  */
-var tasks = [ 'css', 'js', 'img' ]
+var tasks = [ 'css', 'js', 'img', 'font' ]
 
 /**
  * build task

@@ -5,6 +5,7 @@ require('./gulp/build')
 require('./gulp/clean')
 require('./gulp/css')
 require('./gulp/env')
+require('./gulp/font')
 require('./gulp/img')
 require('./gulp/js')
 
