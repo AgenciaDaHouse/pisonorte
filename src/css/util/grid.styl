@@ -50,5 +50,17 @@
     > .u-grid__cell
       padding 0
 
+  &--doubled-gutter
+    margin-top -($gutter*2 / 2)
+
+    +breakpoint(sm)
+      margin-left $gutter*2 * -1
+
+    > .u-grid__cell
+      padding-top ($gutter*2 / 2)
+
+      +breakpoint(sm)
+        padding $gutter*2 0 0 $gutter*2
+
   &.is-centered
     align-items center
