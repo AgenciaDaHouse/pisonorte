@@ -44,6 +44,7 @@ exports = module.exports = function(req, res) {
       .sort('sortOrder')
 
     products.exec(function(err, results) {
+      var output = {}
       var types = _.indexBy(locals.types, 'id')
 
       var formated = results.map(function (item) {
@@ -51,7 +52,18 @@ exports = module.exports = function(req, res) {
         return item
       })
 
-      locals.products = _.groupBy(formated, 'section')
+      formated = _.groupBy(formated, 'section')
+
+      var order = _.map(formated, function (value, key) {
+        return { name: key, length: value.length }
+      })
+
+      _.sortBy(order, 'length').reverse().forEach(function (item) {
+        var name = item.name
+        output[name] = formated[name]
+      })
+
+      locals.products = output
       next(err)
     })
   })
