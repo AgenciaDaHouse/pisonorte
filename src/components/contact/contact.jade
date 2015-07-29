@@ -1,5 +1,7 @@
 //- dependencies
 include ./form
+include ./friend-box
+include ./special-header
 include ../content-header/content-header
 
 mixin contact
@@ -15,12 +17,27 @@ mixin contact
             .c-contact__cell
               +contact-form
 
-              .c-contact__fb
-                .fb-page(data-href='https://www.facebook.com/pisonorteacabamentos', data-small-header='true', data-adapt-container-width='true', data-hide-cover='false', data-show-facepile='true', data-show-posts='false')
-                  .fb-xfbml-parse-ignore
-                    blockquote(cite='https://www.facebook.com/pisonorteacabamentos')
-                      a(href='https://www.facebook.com/pisonorteacabamentos') Pisonorte Acabamentos
+              .c-contact__header-wrapper
+                +special-header('mail')
+                  - email = 'contato@pisonorte.com.br'
+                  a.c-contact__special-heading(href='mailto:#{email}') #{email}
+
+              +friend-box
 
           .u-grid__cell.u-grid__cell--3-5
             .c-contact__cell
               #map-canvas.c-contact__map
+
+              .u-grid.u-grid--no-gutter
+                .u-grid__cell.u-grid__cell--2-5
+                  .c-contact__separator
+                    h3.c-contact__heading Localização:
+                    p.c-contact__description Av. Saul Elkind, 2975<br>CEP: 86082-000<br>Londrina - PR
+
+                    +special-header('device-phone')
+                      p.c-contact__special-heading (43) 3026-6452
+
+                .u-grid__cell.u-grid__cell--3-5
+                  h3.c-contact__heading Horário de funcionamento:
+                  p.c-contact__description Segunda a sexta:<br>08:00 às 18:00 horas
+                  p.c-contact__description Sábado:<br>Segunda a sexta:<br>08:00 às 12:00 horas

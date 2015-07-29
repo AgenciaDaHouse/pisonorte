@@ -44,11 +44,17 @@
       &.is-dummy
         flex none
 
-  &.no-gutter
-    margin 0
+  &--no-gutter
+    margin-top 0
+
+    +breakpoint(sm)
+      margin-left 0
 
     > .u-grid__cell
       padding 0
+
+      +breakpoint(sm)
+        padding 0
 
   &--doubled-gutter
     margin-top -($gutter*2 / 2)
