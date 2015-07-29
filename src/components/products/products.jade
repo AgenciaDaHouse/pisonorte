@@ -10,5 +10,7 @@ mixin products
 
     .c-products__wrapper
       .h-limiter
-        +content-header('Pisos', '', 'sub')
-        +products-items
+        each items, type in products
+          .c-products__section
+            +content-header(type, '', 'sub')
+            +products-items(items)

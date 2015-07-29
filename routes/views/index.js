@@ -4,6 +4,7 @@
  * dependencies
  */
 var keystone = require('keystone')
+var _ = require('underscore')
 
 /**
  * public
@@ -23,6 +24,19 @@ exports = module.exports = function(req, res) {
   ]
 
   view.on('init', function (next) {
+    var types = keystone
+      .list('Type')
+      .model
+      .find()
+      .sort('sortOrder')
+
+    types.exec(function(err, results) {
+      locals.types = results
+      next(err)
+    })
+  })
+
+  view.on('init', function (next) {
     var products = keystone
       .list('Products')
       .model
@@ -30,7 +44,14 @@ exports = module.exports = function(req, res) {
       .sort('sortOrder')
 
     products.exec(function(err, results) {
-      locals.products = results
+      var types = _.indexBy(locals.types, 'id')
+
+      var formated = results.map(function (item) {
+        item.section = types[item.type].name
+        return item
+      })
+
+      locals.products = _.groupBy(formated, 'section')
       next(err)
     })
   })

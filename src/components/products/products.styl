@@ -5,10 +5,37 @@
     background url(/img/products-bg.png) no-repeat top center
     padding 2rem 0
 
+  &__items
+    > .c-products__item
+      +breakpoint(sm)
+        flex 0 0 20%
+
+  &__section
+    margin-bottom 2rem
+
+    &:nth-child(2)
+      display inline-block
+      padding-right 0.75rem
+      width 40%
+
+      .c-products__items
+        > .c-products__item
+          +breakpoint(sm)
+            flex 0 0 50%
+
+    &:nth-child(3)
+      display inline-block
+      padding-right 0.875rem
+      width 20%
+
+      .c-products__items
+        > .c-products__item
+          +breakpoint(sm)
+            flex 0 0 100%
+
   &__item
     display flex
     text-transform uppercase
-    flex 0 0 20%
 
   &__item-wrapper
     background #fff
