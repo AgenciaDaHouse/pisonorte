@@ -14,3 +14,23 @@ mixin products
           .c-products__section
             +content-header(type, '', 'sub')
             +products-items(items)
+
+        .c-products__section
+          .c-products__section-wrapper
+            .c-products__special-heading.u-grid.u-grid--no-gutter
+              .c-products__icon-wrapper
+                i.c-products__icon.icon.icon--tiles
+
+              .u-grid__cell
+                section.c-products__special-wrapper
+                  h3.c-products__heading Produtos sob encomenda?
+                  p.c-products__info Tem algum produto/ marca/ fabricante de preferência? Temos também a praticidade de solicitar seu produto para qualquer fornecedor sob encomenda! Venha até a nossa loja ou entre em contato.
+
+            .c-products__special-heading.u-grid.u-grid--no-gutter.is-facebook
+              .c-products__icon-wrapper
+                i.c-products__icon.icon.icon--social-facebook
+
+              .u-grid__cell
+                section.c-products__special-wrapper
+                  a.c-products__heading(href='https://fb.com/pisonorteacabamentos') /pisonorteacabamentos
+                  p.c-products__info Curta nossa Fan Page!
