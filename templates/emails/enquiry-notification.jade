@@ -1,24 +1,30 @@
 extends /layouts/default
 
 block body-contents
-	h1 Hi *|first_name|*,
-	p.text-larger An enquiry was just submitted to #{brand}:
-	if enquiry.name.full || enquiry.email
-		p.text-larger From 
-			if enquiry.name.full
-				| <strong>#{enquiry.name.full}</strong>
-			if enquiry.name.full && enquiry.email
-				|  (
-			if enquiry.email
-				| <a href="mailto:#{enquiry.email}">#{enquiry.email}</a>
-			if enquiry.name.full && enquiry.email
-				| )
-	if enquiry.phone
-		p.text-larger Phone: #{enquiry.phone}
-	if enquiry.enquiryType
-		p.text-larger #{enquiry._.enquiryType.format()}
-	if enquiry.message
-		.text-larger !{enquiry.message.html}
-	p.text-muted Sent #{enquiry._.createdAt.format()}
-	p &nbsp;
-	+button({ url: '/keystone/enquiries/' + enquiry.id, label: 'Open Keystone' })
+  h1 Olá *|first_name|*,
+  p.text-larger Um contato foi enviado para #{brand}:
+
+  if enquiry.name.full || enquiry.email
+    p.text-larger De 
+      if enquiry.name.full
+        | <strong>#{enquiry.name.full}</strong>
+      if enquiry.name.full && enquiry.email
+        |  (
+      if enquiry.email
+        | <a href="mailto:#{enquiry.email}">#{enquiry.email}</a>
+      if enquiry.name.full && enquiry.email
+        | )
+
+  if enquiry.phone
+    p.text-larger Telefone: #{enquiry.phone}
+
+  if enquiry.address
+    p.text-larger Endereço: #{enquiry.address}
+
+  if enquiry.city
+    p.text-larger Cidade: #{enquiry.city}
+
+  if enquiry.message
+    .text-larger !{enquiry.message.html}
+
+  p.text-muted Enviado em #{enquiry._.createdAt.format()}

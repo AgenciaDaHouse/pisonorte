@@ -1,10 +1,10 @@
 mixin contact-form
-  form.c-contact__form
+  form#form(action='/contact', method='post').c-contact__form
     legend.c-contact__legend Dúvidas ou sugsetões entre em contato, teremos o prazer em atendê-lo.
     
     .c-contact__row
-      label.c-contact__label(for='name') Nome:
-      input.c-contact__field#name(name='name', type='text', required)
+      label.c-contact__label(for='name.full') Nome:
+      input.c-contact__field#name(name='name.full', type='text', required)
 
     .c-contact__row
       label.c-contact__label(for='email') E-mail:
@@ -24,10 +24,13 @@ mixin contact-form
 
     .c-contact__row
       label.c-contact__label(for='message') Mensagem:
-      textarea.c-contact__field.c-contact__field--textarea#message(name='message')
+      textarea.c-contact__field.c-contact__field--textarea#message(name='message', required)
 
     .c-contact__row
       .c-contact__label
       .c-contact__controls
         button.c-contact__button(type='submit') Enviar
         button.c-contact__button(type='reset') Cancelar
+
+    .c-contact__row
+      #form-feedback.c-contact__feedback

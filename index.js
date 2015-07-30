@@ -51,16 +51,16 @@ keystone.set('routes', require('./routes'))
 
 // Email locals
 keystone.set('email locals', {
-  logo_src: '/images/logo-email.gif',
-  logo_width: 194,
-  logo_height: 76,
+  logo_src: '/img/logo.png',
+  logo_width: 247,
+  logo_height: 70,
   theme: {
-    email_bg: '#f9f9f9',
-    link_color: '#2697de',
+    email_bg: '#f3f3f3',
+    link_color: '#0069b4',
     buttons: {
       color: '#fff',
-      background_color: '#2697de',
-      border_color: '#1a7cb7'
+      background_color: '#0069b4',
+      border_color: '#ccc'
     }
   }
 })
@@ -68,10 +68,10 @@ keystone.set('email locals', {
 // Email rules
 keystone.set('email rules', [{
   find: '/images/',
-  replace: (keystone.get('env') === 'production') ? 'http://www.your-server.com/images/' : 'http://localhost:3000/images/'
+  replace: (keystone.get('env') === 'production') ? 'http://pisonorte.herokuapp.com/img/' : 'http://localhost:3000/img/'
 }, {
   find: '/keystone/',
-  replace: (keystone.get('env') === 'production') ? 'http://www.your-server.com/keystone/' : 'http://localhost:3000/keystone/'
+  replace: (keystone.get('env') === 'production') ? 'http://pisonorte.herokuapp.com/keystone/' : 'http://localhost:3000/keystone/'
 }])
 
 // Email tests
