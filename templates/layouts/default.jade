@@ -4,7 +4,7 @@ doctype html
 include ../mixins/includes
 
 //- vars
-- postfix = (ENV === 'production') ? '.min' : ''
+- postfix = (env === 'production') ? '.min' : ''
 
 html.root
   head
@@ -46,7 +46,7 @@ html.root
     .c-main-wrapper
       block content
 
-    if ENV !== 'production'
+    if env !== 'production'
       script(src='//localhost:4100/livereload.js')
 
     #fb-root

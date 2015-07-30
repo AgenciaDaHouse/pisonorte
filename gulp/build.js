@@ -15,5 +15,5 @@ var tasks = [ 'css', 'js', 'img', 'font' ]
  * build task
  */
 gulp.task('build', [ 'env:dev' ], function (next) {
-  runSequence('clean:dist', tasks, next)
+  runSequence('clean:dist', tasks, 'minify', next)
 })
