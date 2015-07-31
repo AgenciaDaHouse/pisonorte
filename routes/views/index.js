@@ -24,6 +24,19 @@ exports = module.exports = function(req, res) {
   ]
 
   view.on('init', function (next) {
+    var banners = keystone
+      .list('Banner')
+      .model
+      .find()
+      .sort('sortOrder')
+
+    banners.exec(function(err, results) {
+      locals.banners = results
+      next(err)
+    })
+  })
+
+  view.on('init', function (next) {
     var types = keystone
       .list('Type')
       .model

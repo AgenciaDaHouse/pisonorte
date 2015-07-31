@@ -1,6 +1,6 @@
 mixin banners-items
-  each item in banners
-    li.c-banners__item(style='background-image:url(#{item.image})')
+  each item, index in banners
+    li.c-banners__item(style='background-image:url(#{item.image.url})', class=index === 0 ? 'is-visible' : '')
       .c-banners__text
         p.c-banners__text-top #{item.textTop}
         p.c-banners__text-bottom #{item.textBottom}

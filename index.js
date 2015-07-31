@@ -81,7 +81,7 @@ keystone.set('email tests', require('./routes/emails'))
 keystone.set('nav', {
   'products': 'products',
   'showcase': 'offers',
-  'enquiries': 'enquiries',
+  'suppliers': 'suppliers',
   'users': 'users'
 })
 

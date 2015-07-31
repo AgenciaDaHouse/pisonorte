@@ -1,10 +1,20 @@
 .c-banners
+  height 100vh
+
   &__item
     background-attachment fixed
     background-position center
     background-size cover
-    position relative
+    position absolute
     height 100vh
+    opacity 0
+    visibility hidden
+    width 100%
+    transition 0.5s
+
+    &.is-visible
+      opacity 1
+      visibility visible
 
   &__text
     color $color-brand

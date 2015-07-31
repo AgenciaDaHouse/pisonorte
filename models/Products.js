@@ -16,7 +16,6 @@ Products.add({
   name: { type: String, required: true },
   image: { type: Types.CloudinaryImage, required: true, initial: false },
   description: { type: String },
-  // type: { type: String },
   type: { type: Types.Relationship, ref: 'Type' },
   index: { type: Number }
 })
