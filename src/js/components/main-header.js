@@ -4,8 +4,8 @@
  * definitions
  */
 var $window = $(window)
-var $header = $('#main-header')
-var $nav = $('#main-nav')
+var $header = $('#c-main-header')
+var $nav = $('#c-main-nav__nav')
 var headerClass = 'c-main-header--small'
 var limit = 20
 
@@ -26,4 +26,12 @@ $window.on('scroll', function () {
 $nav.onePageNav({
   changeHash: true,
   currentClass: 'is-active'
+})
+
+/**
+ * responsive nav
+ */
+$('#c-main-nav__select').on('change', function () {
+  $nav.find('[href="' + this.value + '"]').click()
+  $(this).prop('selectedIndex', 0)
 })

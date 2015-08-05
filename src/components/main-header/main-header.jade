@@ -3,11 +3,12 @@ include ../main-nav/main-nav
 include ../social-nav/social-nav
 
 mixin main-header
-  header.c-main-header#main-header
+  header.c-main-header#c-main-header
     .h-limiter
-      .u-grid.is-centered
-        h1.c-main-header__logo.u-grid__cell.is-dummy
-          img(src='/img/logo.png', alt='Pisonorte Acabamentos')
+      .u-grid.u-grid--not-responsive.is-centered
+        .u-grid__cell.is-dummy
+          h1.c-main-header__logo
+            img(src='/img/logo.png', alt='Pisonorte Acabamentos')
 
         +main-nav('u-grid__cell')
         +social-nav('u-grid__cell is-dummy')

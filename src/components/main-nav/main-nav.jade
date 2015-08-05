@@ -1,5 +1,11 @@
 mixin main-nav(baseClass)
-  nav.c-main-nav#main-nav(class=baseClass)
-    each item in mainNav
-      li.c-main-nav__item
-        a.c-main-nav__link(href=item.url) #{item.label}
+  .c-main-nav(class=baseClass)
+    nav.c-main-nav__nav#c-main-nav__nav
+      each item in mainNav
+        li.c-main-nav__item
+          a.c-main-nav__link(href=item.url) #{item.label}
+
+    select.c-main-nav__select#c-main-nav__select
+      option Menu
+      each item in mainNav
+        option(value=item.url) #{item.label}

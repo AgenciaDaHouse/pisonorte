@@ -1,5 +1,14 @@
 .c-main-nav
-  text-align center
+  text-align right
+
+  +breakpoint(lg)
+    text-align center
+
+  &__nav
+    display none
+
+    +breakpoint(lg)
+      display inline-block
 
   &__item
     display inline-block
@@ -21,3 +30,16 @@
 
     &.is-active
       font-weight 700
+
+  &__select
+    appearance none
+    background none
+    border 1px solid
+    border-radius 2px
+    color $color-brand
+    display inline-block
+    padding 0.5rem
+    width 4.25rem
+
+    +breakpoint(lg)
+      display none

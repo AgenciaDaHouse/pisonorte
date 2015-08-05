@@ -1,8 +1,16 @@
 .c-social-nav
+  display none
+
+  +breakpoint(sm)
+    display inline-block
+
   &__item
     display inline-block
-    margin-left 1rem
+    margin-left 0.25rem
     vertical-align middle
+
+    +breakpoint(xl)
+      margin-left 1rem
 
   &__link
     align-items center
