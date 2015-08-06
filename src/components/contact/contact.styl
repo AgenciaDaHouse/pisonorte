@@ -6,10 +6,16 @@
     color #fff
 
   &__cell
-    padding 2rem
+    padding 1rem
+    text-align center
+
+    +breakpoint(md)
+      padding 2rem
+      text-align left
 
   &__form
-    border-right 1px solid #fff
+    +breakpoint(md)
+      border-right 1px solid #fff
 
   &__legend
     font-weight 700
@@ -57,19 +63,25 @@
     margin-right 0.25rem
 
   &__fb
-    text-align right
-    padding-right 4rem
+    text-align center
+
+    +breakpoint(md)
+      text-align right
+      padding-right 4rem
 
   &__map
     border 3px solid #fff
     border-radius 4px
     height 22rem
-    margin-bottom 3rem
     position relative
 
+    +breakpoint(md)
+      margin-bottom 3rem
+
   &__separator
-    border-right 1px solid #fff
-    margin-right 2.5rem
+    +breakpoint(md)
+      border-right 1px solid #fff
+      margin-right 2.5rem
 
   &__heading,
   &__description
@@ -79,6 +91,10 @@
   &__heading
     color $color-accent
     font-size 1.75rem
+    margin 2rem 0 0
+
+    +breakpoint(md)
+      margin-top 0 0 1rem
 
   &__description
     line-height 1.5
@@ -109,6 +125,10 @@
     align-items center
     display flex
     margin auto
+    justify-content center
+
+    +breakpoint(md)
+      justify-content left
 
   &__feedback
     padding 1rem 0 0 4.5rem

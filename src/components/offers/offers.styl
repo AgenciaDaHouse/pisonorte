@@ -5,9 +5,11 @@
     padding 2rem 0
 
   &__item
-    border-left 1px solid $color-brand
-    border-top 1px solid $color-brand
     text-align center
+
+    +breakpoint(md)
+      border-left 1px solid $color-brand
+      border-top 1px solid $color-brand
 
     &:nth-child(3n+1)
       border-left none

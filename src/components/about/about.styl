@@ -1,10 +1,17 @@
 .c-about
   background url('/img/about-bg.png') center -2.5rem no-repeat
-  padding 2rem 0 8rem
+  padding 2rem 0 4rem
+
+  +breakpoint(md)
+    padding-bottom 8rem
 
   &__item
     color $color-grey
     display flex
+    margin-top 1rem
+
+    +breakpoint(sm)
+      margin-top 0
 
   &__icon-wrapper
     margin 1.25rem 2rem

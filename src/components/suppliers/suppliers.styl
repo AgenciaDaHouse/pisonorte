@@ -3,21 +3,32 @@
 
   &__wrapper
     background #fff
-    padding 6rem 0
+    padding 2rem 0
+
+    +breakpoint(md)
+      padding 6rem 0
 
   &__item,
   &__item-wrapper
     display flex
 
+    +breakpoint-inv(md)
+      .root &
+        flex 0 0 100%
+
   &__item
-    border-left 1px solid #777
+    +breakpoint(md)
+      border-left 1px solid #777
 
     &:nth-child(3n+1)
       border-left none
 
   &__item-wrapper
-    padding 2rem
+    padding 1rem 0
     width 100%
+
+    +breakpoint(md)
+      padding 2rem
 
   &__figure,
   &__image
