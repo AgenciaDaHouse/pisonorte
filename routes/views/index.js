@@ -102,7 +102,7 @@ exports = module.exports = function(req, res) {
       .sort('sortOrder')
 
     suppliers.exec(function(err, results) {
-      locals.suppliers = results
+      locals.suppliers = _.sortBy(results, 'index')
       next(err)
     })
   })

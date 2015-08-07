@@ -7,4 +7,6 @@ mixin products-items(items)
             img.c-products__image(src=item.image.url, alt=item.name)
 
           h3.c-products__name #{item.name}
-          p.c-products__description #{item.description}
+
+          if item.description
+            p.c-products__description #{item.description}
