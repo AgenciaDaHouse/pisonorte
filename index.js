@@ -41,6 +41,7 @@ keystone.set('locals', {
   env: keystone.get('env'),
   utils: keystone.utils,
   editable: keystone.content.editable,
+  email: 'contato@pisonorte.com.br',
   toPrice: function (value) {
     return value.toFixed(2).replace('.', ',')
   }
