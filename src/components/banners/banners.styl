@@ -18,7 +18,7 @@
 
   &__text
     color $color-brand
-    position fixed
+    position absolute
     text-transform uppercase
     font-size 3.5rem
     font-weight 700
@@ -26,9 +26,10 @@
     bottom: 1.5rem
     line-height 0.9
 
-    +breakpoint(sm)
+    +breakpoint(md)
       bottom: 4rem
       left: 60%
+      position fixed
 
     &-bottom
       color $color-accent
